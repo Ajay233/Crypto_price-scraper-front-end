@@ -1,43 +1,26 @@
 import React from 'react'
 import PriceChart from './chart/priceChart'
+import { getUsingParams } from './axios/requests'
 
 class Home extends React.Component {
+  componentDidMount(){
+      getUsingParams('getPrices', "tTEST").then((resp) => {
+        this.setState({ prices: resp.data })
+      }).catch((err) => {
+        console.log(err)
+      })
+  }
 
-  getData = () => {
-    const testData = [
-      {
-        id: 1,
-        price: "0.352836",
-        currency: "MIN",
-        created: "2022-03-04 23:02:33"
-      },
-      {
-        id: 2,
-        price: "0.284749",
-        currency: "MIN",
-        created: "2022-03-04 24:02:33"
-      },
-      {
-        id: 3,
-        price: "0.463937",
-        currency: "MIN",
-        created: "2022-03-04 25:02:33"
-      },
-      {
-        id: 4,
-        price: "0.928462",
-        currency: "MIN",
-        created: "2022-03-04 26:02:33"
-      }
-    ]
-    return testData
+  state = {
+    prices: []
   }
 
   render(){
     return(
       <div>
         Welcome
-        <PriceChart currency={'MIN'} priceData={this.getData()} />
+        {console.log(this.state.prices)}
+        <PriceChart currency={'MIN'} priceData={this.state.prices} />
       </div>
     );
   }
