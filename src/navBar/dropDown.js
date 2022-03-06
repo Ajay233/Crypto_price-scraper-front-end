@@ -7,11 +7,11 @@ const DropDown = (props) => {
   // Where appicable add a ternary operatory to check permission level
 
   const renderTestLink1 = () => {
-    return <div className="dropDownOption"><Link className="dropDownLink">test link 1</Link><hr/></div>
+    return <div className="dropDownOption"><Link className="dropDownLink" to="/newTicker">New Ticker</Link><hr/></div>
   }
 
   const renderTestLink2 = () => {
-    return <div className="dropDownOption"><Link className="dropDownLink">test link 2</Link><hr/></div>
+    return <div className="dropDownOption"><Link className="dropDownLink" to="/tickers">Active Tickers</Link><hr/></div>
   }
 
   const renderlogOut = () => {
