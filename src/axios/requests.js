@@ -1,6 +1,6 @@
 import axios from 'axios'
-const url = 'http://localhost:3030'
-//const url = 'https://test-scraper-server.herokuapp.com/'
+//const url = 'http://localhost:3030'
+const url = 'https://test-scraper-server.herokuapp.com'
 
 export const get = (endpoint) => {
   return axios.get(`${url}/${endpoint}`)

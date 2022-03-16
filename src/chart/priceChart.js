@@ -42,17 +42,20 @@ const PriceChart = (props) => {
     labels,
     datasets: [
       {
+        pointRadius: 0,
         label: `${props.currency}`,
         data: prices,
         borderColor: '',
-        backgroundColor: ''
+        backgroundColor: '',
       }
     ]
   }
 
   return(
+    <div className="chartContainer">
     <div className="chartArea">
       <Line data={data} options={options}/>
+    </div>
     </div>
   )
 }

@@ -1,18 +1,35 @@
 import React from 'react'
 import PriceChart from './chart/priceChart'
-import { getUsingParams } from './axios/requests'
+import { getUsingParams, post } from './axios/requests'
 
 class Home extends React.Component {
   componentDidMount(){
-      getUsingParams('getPrices', "tTEST").then((resp) => {
-        this.setState({ prices: resp.data })
-      }).catch((err) => {
-        console.log(err)
-      })
+
+
+
   }
 
   state = {
-    prices: []
+    prices: [],
+    intervalId: 0,
+    currency: ""
+  }
+
+  setCurency = (e) => {
+    this.setState({ currency: e.target.value })
+    this.fetchPriceData(e.target.value)
+  }
+
+  stopTicker = () => {
+    clearInterval(this.state.intervalId)
+  }
+
+  fetchPriceData = (price) => {
+    getUsingParams('getPrices', price).then((resp) => {
+      this.setState({ prices: resp.data })
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 
   render(){
@@ -20,7 +37,14 @@ class Home extends React.Component {
       <div>
         Welcome
         {console.log(this.state.prices)}
-        <PriceChart currency={'MIN'} priceData={this.state.prices} />
+        <div className="chartSelect">
+        <select onChange={(e) => this.setCurency(e)}>
+          <option selected disabled>Select currency</option>
+          <option calue="MIN">MIN</option>
+          <option calue="MELD">MELD</option>
+        </select>
+        </div>
+        <PriceChart currency={this.state.currency} priceData={this.state.prices} />
       </div>
     );
   }

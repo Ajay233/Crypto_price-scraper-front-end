@@ -8,6 +8,7 @@ import history from './history'
 
 import './stylesheets/main.css'
 import './stylesheets/chart.css'
+import './stylesheets/newTicker.css'
 
 class App extends React.Component {
   render(){
