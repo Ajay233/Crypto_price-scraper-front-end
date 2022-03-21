@@ -24,14 +24,18 @@ class Tickers extends React.Component {
   renderHeadings = () => {
     return(
       <div className="tickerHeadings">
-        <div className="tickerPrice tableHeading">Currency being watched</div>
+        <div className="tickerDexUrl tableHeading">DEX Url</div>
+        <div className="tickerSwapCurrency tableHeading">Swap currency</div>
+        <div className="tickerPriceCurrency tableHeading">Price Currency</div>
+        <div className="tickerFrequency tableHeading">Ticker Frequency</div>
+        <div className="tickerCreated tableHeading">Created</div>
       </div>
     );
   }
 
   renderTickers = () => {
-    let tickers = this.state.activeTickers.map((ticker, i) => {
-      return <Ticker key={i} currency={ticker} getActiveTickers={this.getActiveTickers}/>
+    let tickers = this.state.activeTickers.map((tickerDetails, i) => {
+      return <Ticker key={i} ticker={tickerDetails} getActiveTickers={this.getActiveTickers}/>
     })
     console.log(tickers)
     return tickers

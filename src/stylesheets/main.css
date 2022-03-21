@@ -13,18 +13,32 @@ html {
 .tickerContainer, .tickerHeadings {
   display: inline-flex;
   width: 99%;
-  margin: 5px 0.5%;
+  margin: 0 0.5%;
   border-bottom: 1px solid black;
 }
 
 .tickerHeadings {
+  text-align: left !important;
   border-bottom: 3px solid black
 }
 
-.tickerPrice {
-  margin-right: 20%;
+.tickerDexUrl, .tickerCreated, .tickerSwapCurrency, .tickerPriceCurrency, .tickerFrequency {
+  margin-right: 5px;
   padding: 10px 0;
-  width: 85%;
+}
+
+.tickerDexUrl, .tickerCreated {
+  width: 20%;
+}
+
+.tickerSwapCurrency, .tickerPriceCurrency {
+  width: 15%;
+  text-align: center;
+}
+
+.tickerFrequency {
+  width: 20%;
+  text-align: center;
 }
 
 .stopTickerButton {
@@ -32,8 +46,8 @@ html {
 }
 
 .tickerOptions {
-  width: 10%;
-  margin: auto 2.5%;
+  width: 8%;
+  margin: auto 1%;
 }
 
 .tableHeading {
@@ -43,7 +57,7 @@ html {
 h1 {
   align-content: center;
   width: 30%;
-  margin: 10px 35%;
+  margin: 10px 35% 30px 35%;
 }
 
 select {
