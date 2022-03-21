@@ -1,5 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { setNotification } from '../notification/actions'
 import { post } from '../axios/requests'
+import Notification from '../notification/notification'
 
 class NewTicker extends React.Component {
 
@@ -7,8 +10,9 @@ class NewTicker extends React.Component {
     url: "",
     swapCurrency: "",
     priceCurrency: "",
-    frequency: 3
-  }
+    frequency: 3,
+    submitting: false
+  };
 
   startTicker = () => {
     const data = {
@@ -20,8 +24,10 @@ class NewTicker extends React.Component {
     console.log(data)
     post("startTickerV2", data).then((resp) => {
       console.log(resp)
+      this.setNotificationMsg(`${resp.data}`, "success")
     }).catch((err) => {
       console.log(err)
+      this.setNotificationMsg(`${err}`, "warning")
     })
   }
 
@@ -41,9 +47,14 @@ class NewTicker extends React.Component {
     this.setState({ frequency: e.target.value })
   }
 
+  setNotificationMsg = (msg, type) => {
+    this.props.setNotification(msg, type, true)
+  }
+
   render(){
     return(
       <div>
+        <Notification />
         <h1>Start a new ticker</h1>
         <div className="tickerForm">
           <div className="formOption">
@@ -115,11 +126,23 @@ class NewTicker extends React.Component {
               </select>
             </div>
           </div>
-          <button className="button-blue" onClick={() => this.startTicker()}>Submit</button>
+          <button
+            disabled={this.state.submitting}
+            className="button-blue"
+            onClick={() => this.startTicker()}
+          >
+            Submit
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default NewTicker
+export const mapStateToProps = (state) => {
+  return {
+    notificationState: state.notificationState
+  }
+}
+
+export default connect(mapStateToProps, { setNotification })(NewTicker)

@@ -1,0 +1,21 @@
+.notification {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.success {
+  background-color: rgb(212, 237, 218);
+  color: rgb(23, 86, 36)
+}
+
+.error {
+  background-color: rgb(248, 215, 219);
+  color: rgb(114, 28, 37);
+}
+
+.warning {
+  background-color: rgb(255, 243, 205);
+  color: rgb(147, 118, 36);
+}

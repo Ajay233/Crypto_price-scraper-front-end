@@ -35,13 +35,14 @@ class Home extends React.Component {
   render(){
     return(
       <div>
-        Welcome
+        <h1>Crypto Price Tracker</h1>
         {console.log(this.state.prices)}
         <div className="chartSelect">
         <select onChange={(e) => this.setCurency(e)}>
           <option selected disabled>Select currency</option>
           <option calue="MIN">MIN</option>
           <option calue="MELD">MELD</option>
+          <option calue="SUNDAE">SUNDAE</option>
         </select>
         </div>
         <PriceChart currency={this.state.currency} priceData={this.state.prices} />
