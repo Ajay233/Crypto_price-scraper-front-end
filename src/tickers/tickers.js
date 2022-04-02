@@ -1,24 +1,17 @@
 import React from 'react'
 import Ticker from './ticker'
-import { get } from '../axios/requests'
+import Notification from '../notification/notification'
+import { connect } from 'react-redux'
+import { getTickers, stopTicker } from './actions'
 
 class Tickers extends React.Component {
 
-  state = {
-    activeTickers: []
-  }
-
   componentDidMount(){
-    this.getActiveTickers()
+    this.props.getTickers();
   }
 
   getActiveTickers = () => {
-    console.log("Getting tickers")
-    get('getTickersV2').then((response) => {
-      console.log(response.data)
-      let data = response.data
-      this.setState({ activeTickers: data })
-    });
+    this.props.getTickers();
   }
 
   renderHeadings = () => {
@@ -34,22 +27,30 @@ class Tickers extends React.Component {
   }
 
   renderTickers = () => {
-    let tickers = this.state.activeTickers.map((tickerDetails, i) => {
-      return <Ticker key={i} ticker={tickerDetails} getActiveTickers={this.getActiveTickers}/>
+    const { tickers } = this.props.tickerState
+    let tickerList = tickers.map((tickerDetails, i) => {
+      return <Ticker key={i} ticker={tickerDetails} getActiveTickers={this.getActiveTickers} stopTicker={this.props.stopTicker}/>
     })
-    console.log(tickers)
-    return tickers
+    return tickerList
   }
 
   render(){
+    const { tickers } = this.props.tickerState
     return(
       <div>
+        <Notification />
         <h1>Active tickers</h1>
-        {this.state.activeTickers.length > 0 ? this.renderHeadings() : null}
-        <div>{this.state.activeTickers.length > 0 ? this.renderTickers() : "No don't currently have any active tickers"}</div>
+        {tickers.length > 0 ? this.renderHeadings() : null}
+        <div>{tickers.length > 0 ? this.renderTickers() : "No don't currently have any active tickers"}</div>
       </div>
     );
   }
 }
 
-export default Tickers
+export const mapStateToProps = (state) => {
+  return {
+    tickerState: state.tickerState
+  }
+}
+
+export default connect(mapStateToProps, { getTickers, stopTicker })(Tickers)

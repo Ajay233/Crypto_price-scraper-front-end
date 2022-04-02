@@ -4,9 +4,7 @@ import { post } from '../axios/requests'
 const Ticker = (props) => {
 
   const stopTicker = () => {
-    post("stopTicker", { currency: props.ticker.price_currency, id: props.ticker.id }).then(() => {
-      props.getActiveTickers()
-    })
+    props.stopTicker(props.ticker.price_currency, props.ticker.id)
   }
 
   return(
