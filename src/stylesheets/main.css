@@ -67,6 +67,12 @@ select {
   border-radius: 0.25rem;
 }
 
+.select-inline {
+  display: inline-block !important;
+  width: auto;
+  margin: 0 10px;
+}
+
 .selectHeading {
   font-size: 15px;
   font-weight: bold;

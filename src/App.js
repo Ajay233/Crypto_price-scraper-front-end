@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom'
 import NavBar from './navBar/navBar'
-import Home from './home'
+import Home from './home/home'
 import Tickers from './tickers/tickers'
 import NewTicker from './tickers/newTicker'
 import history from './history'
