@@ -38,3 +38,9 @@
   background-color: black;
   float: right;
 }
+
+.appHeading {
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+}

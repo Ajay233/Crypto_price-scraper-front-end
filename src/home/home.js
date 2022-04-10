@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PriceChart from '../chart/priceChart'
 import Select from '../components/formComponents/select'
+import PriceDisplay from '../components/priceDisplay/priceDisplay'
 import { fetchCurrencyList, fetchPrices, setIntervalId } from './actions'
 import { repeatFunc } from '../utils/homeUtils'
 import { dexList } from '../lists'
@@ -37,7 +38,7 @@ class Home extends React.Component {
     const { prices, dex, currency } = this.props.homeState
     return(
       <div>
-        <h1>Crypto Price Tracker</h1>
+        <h1><i className="fas fa-coins"></i> Crypto Price Tracker</h1>
         <div className="chartSelect">
           <Select
             type="inline"
@@ -47,6 +48,7 @@ class Home extends React.Component {
           />
           {this.renderCurrencySelect()}
         </div>
+        <PriceDisplay currency={currency} prices={prices} />
         <PriceChart currency={currency} priceData={prices} />
       </div>
     );

@@ -17,7 +17,6 @@ const Select = (props) => {
 
   const mapArray = () => {
     let options = props.optionList.map((opt, i) => {
-      console.log(opt)
       return <option key={i} value={opt.currency}>{opt.currency}</option>
     })
     return options

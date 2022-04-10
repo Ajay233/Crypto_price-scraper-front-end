@@ -1,0 +1,28 @@
+.priceSummary {
+  width: 30%;
+  margin: 30px 35% 0 35%;
+}
+
+.pricePerCurrency {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.neutral {
+  font-weight: bolder;
+  color: rgba(51, 122, 183, 1);
+}
+
+.decrease {
+  color: rgba(220, 53, 69, 1);
+  font-weight: bolder;
+}
+
+.increase {
+  color: rgba(92, 184, 92, 1);
+  font-weight: bolder;
+}
+
+.increase, .decrease, .neutral {
+  margin: 0px 15px
+}
