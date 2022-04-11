@@ -19,8 +19,6 @@ const PriceDisplay = (props) => {
   const renderIncreaseOrDecrease = () => {
     const lastPrice = props.prices[props.prices.length - 1].price
     const secondToLastPrice = props.prices[props.prices.length - 2].price
-    console.log(typeof lastPrice)
-    console.log(typeof secondToLastPrice)
     if(lastPrice === secondToLastPrice){
       return <span className="neutral"><i className="fas fa-arrows-alt-h"></i> 0.0000%</span>
     } else if(lastPrice > secondToLastPrice){

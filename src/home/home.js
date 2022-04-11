@@ -11,13 +11,26 @@ class Home extends React.Component {
 
   stopTicker = () => {
     const { intervalId } = this.props.homeState
-    clearInterval(intervalId)
+    if(intervalId !== null){
+      clearInterval(intervalId)
+    }
   }
 
   startTicker = () => {
-    const { currency, dex } = this.props.homeState
-    const id = repeatFunc(this.props.fetchPrices(currency, dex.url), 60000)
+    const boundfetchPrices = this.fetchPrices.bind(this)
+    const id = repeatFunc(boundfetchPrices, 60000)
     this.props.setIntervalId(id);
+  }
+
+  fetchPrices = () => {
+    const { currency, dex } = this.props.homeState
+    this.props.fetchPrices(currency, dex.url)
+  }
+
+  fetchPricesAndWatch = (e, dex) => {
+    this.stopTicker()
+    this.props.fetchPrices(e.target.value, dex.url)
+    this.startTicker()
   }
 
   renderCurrencySelect = () => {
@@ -28,7 +41,7 @@ class Home extends React.Component {
           type="inline"
           defaultText={'Select a Currency'}
           optionList={currencyList}
-          onChangeFunc={(e) => this.props.fetchPrices(e.target.value, dex.url)}
+          onChangeFunc={(e) => this.fetchPricesAndWatch(e, dex)}
         />
       )
     }
