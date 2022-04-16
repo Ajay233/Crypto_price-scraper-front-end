@@ -10,6 +10,7 @@ import {
   Legend
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
+import { chartUtil } from '../utils/chartUtils'
 
 ChartJS.register(
   CategoryScale,
@@ -25,18 +26,41 @@ const PriceChart = (props) => {
 
   const options = {
     responsive: true,
+    scales: {
+      xAxes: {
+        grid: {
+          color: 'rgba(255, 25, 255, 0.5)'
+        },
+        ticks: {
+          color: 'white'
+        }
+      },
+      yAxes: {
+        grid: {
+          color: 'rgba(255, 25, 255, 0.5)'
+        },
+        ticks: {
+          color: 'white'
+        }
+      }
+    },
     plugins: {
       legend:{
         position: 'top',
+        labels: {
+          color: 'white'
+        }
       },
       title:{
         display: true,
-        text: `${props.currency} Token Price`
-      }
+        text: `${props.currency} Token Price`,
+        color: 'white'
+      },
     }
   }
   const labels = props.priceData.map(entry => entry.created)
   const prices = props.priceData.map(entry => parseFloat(entry.price))
+  const priceMovementColour = chartUtil.setLineColor(prices[prices.length - 1], prices[prices.length - 2])
 
   const data = {
     labels,
@@ -45,8 +69,9 @@ const PriceChart = (props) => {
         pointRadius: 0,
         label: `${props.currency}`,
         data: prices,
-        borderColor: '',
-        backgroundColor: '',
+        borderColor: priceMovementColour,
+        backgroundColor: priceMovementColour,
+        color: 'white'
       }
     ]
   }

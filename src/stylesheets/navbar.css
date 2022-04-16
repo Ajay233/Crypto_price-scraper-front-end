@@ -1,6 +1,6 @@
 .navBar {
   background-color: black;
-  padding: 5px;
+  padding: 10px 5px 5px 5px;
   height: 25px;
 }
 
@@ -37,6 +37,8 @@
   width: 150px;
   background-color: black;
   float: right;
+  position: absolute;
+  right: 0;
 }
 
 .appHeading {

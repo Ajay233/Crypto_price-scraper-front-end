@@ -51,7 +51,7 @@ class Home extends React.Component {
     const { prices, dex, currency } = this.props.homeState
     return(
       <div>
-        <h1><i className="fas fa-coins"></i> Crypto Price Tracker</h1>
+        <img id="appTitle" src={require("../static/DexHeader.png")} alt="Cardano Dex Watcher"></img>
         <div className="chartSelect">
           <Select
             type="inline"
