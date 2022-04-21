@@ -8,7 +8,7 @@ export const dexList = {
     logo: ""
   },
   Wingriders: {
-    url: "https://app.testnet.wingriders.com/pool",
+    url: "https://app.wingriders.com/pools",
     logo: ""
   },
   Maladex: {

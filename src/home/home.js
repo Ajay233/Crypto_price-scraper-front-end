@@ -9,6 +9,14 @@ import { dexList } from '../lists'
 
 class Home extends React.Component {
 
+  state = {
+    chartRange: "All"
+  }
+
+  setRange = (range) => {
+    this.setState({ chartRange: range })
+  }
+
   stopTicker = () => {
     const { intervalId } = this.props.homeState
     if(intervalId !== null){
@@ -62,7 +70,7 @@ class Home extends React.Component {
           {this.renderCurrencySelect()}
         </div>
         <PriceDisplay currency={currency} prices={prices} />
-        <PriceChart currency={currency} priceData={prices} />
+        <PriceChart currency={currency} priceData={prices} range={this.state.chartRange} setRange={this.setRange}/>
       </div>
     );
   }

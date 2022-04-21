@@ -10,6 +10,7 @@ import './stylesheets/main.css'
 import './stylesheets/chart.css'
 import './stylesheets/newTicker.css'
 import './stylesheets/priceData.css'
+import './stylesheets/buttons.css'
 
 class App extends React.Component {
   render(){

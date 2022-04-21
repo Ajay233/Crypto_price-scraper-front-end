@@ -10,6 +10,7 @@ import {
   Legend
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
+import RangeSelect from './rangeSelect'
 import { chartUtil } from '../utils/chartUtils'
 
 ChartJS.register(
@@ -24,10 +25,17 @@ ChartJS.register(
 
 const PriceChart = (props) => {
 
+  const labels = props.priceData.map(entry => entry.created)
+  const prices = props.priceData.map(entry => parseFloat(entry.price))
+  const priceMovementColour = chartUtil.setLineColor(prices[prices.length - 1], prices[prices.length - 2])
+  const range = chartUtil.setMinPriceRange(props.range, prices.length)
+
   const options = {
     responsive: true,
     scales: {
       xAxes: {
+        min: prices.length - range,
+        max: prices.length - 1,
         grid: {
           color: 'rgba(255, 25, 255, 0.5)'
         },
@@ -58,9 +66,6 @@ const PriceChart = (props) => {
       },
     }
   }
-  const labels = props.priceData.map(entry => entry.created)
-  const prices = props.priceData.map(entry => parseFloat(entry.price))
-  const priceMovementColour = chartUtil.setLineColor(prices[prices.length - 1], prices[prices.length - 2])
 
   const data = {
     labels,
@@ -79,6 +84,7 @@ const PriceChart = (props) => {
   return(
     <div className="chartContainer">
     <div className="chartArea">
+      <RangeSelect range={props.range} setRange={props.setRange} />
       <Line data={data} options={options}/>
     </div>
     </div>

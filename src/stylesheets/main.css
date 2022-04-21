@@ -90,26 +90,3 @@ select {
   font-weight: bold;
   margin: 5px 0px;
 }
-
-button {
-  margin: 5px 0px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-}
-
-.button-blue {
-  color: white;
-  background-color: rgba(13, 110, 253, 1);
-}
-.button-blue:hover {
-  background-color: rgba(11, 94, 215, 1);
-}
-
-.button-red {
-  color: white;
-  background-color: rgba(220, 53, 69, 1)
-}
-.button-red:hover {
-  background-color: rgba(187, 45, 59, 1);
-}
