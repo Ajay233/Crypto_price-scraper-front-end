@@ -25,7 +25,8 @@ ChartJS.register(
 
 const PriceChart = (props) => {
 
-  const labels = props.priceData.map(entry => entry.created)
+  const regex = /(T)|(:[0-9]{2}\.000Z)/g
+  const labels = props.priceData.map(entry => entry.created.replace(regex, '  ').trim())
   const prices = props.priceData.map(entry => parseFloat(entry.price))
   const priceMovementColour = chartUtil.setLineColor(prices[prices.length - 1], prices[prices.length - 2])
   const range = chartUtil.setMinPriceRange(props.range, prices.length)
