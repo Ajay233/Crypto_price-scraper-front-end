@@ -15,7 +15,7 @@ const DropDown = (props) => {
   }
 
   const renderlogOut = () => {
-    return <div className="dropDownOption" onClick={props.logUserOut}><Link className="dropDownLink"><i className="fas fa-sign-out-alt"></i> Log Out</Link><hr/></div>
+    return <div className="dropDownOption" onClick={props.logUserOut}><button className="dropDownLink button-link-alt"><i className="fas fa-sign-out-alt"></i> Log Out</button><hr/></div>
   }
 
   // create a methor to render pre-login links i.e. login & create account

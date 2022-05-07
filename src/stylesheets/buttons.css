@@ -25,13 +25,19 @@ button:hover, select:hover {
   background-color: rgba(187, 45, 59, 1);
 }
 
-.button-link {
+.button-link, .button-link-alt {
   border: none;
   background-color: rgba(255, 255, 255, 0);
   color: white;
   font-weight: bold;
   border-radius: 5px;
   margin: 0 3px;
+}
+
+.button-link-alt {
+  font-weight: normal;
+  font-size: 16px !important;
+  padding: 0;
 }
 
 .button-link:hover {

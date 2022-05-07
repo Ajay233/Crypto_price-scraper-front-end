@@ -10,13 +10,13 @@ export const chartUtil = {
   },
   setMinPriceRange: (chartRange, priceListLength) => {
     switch (chartRange) {
-      case "15m": return 6; break;
-      case "1h": return 21; break;
-      case "4h": return 121; break;
-      case "Day": return 521; break;
-      case "Week": return 3361; break;
-      case "All": return priceListLength; break;
-      default: return priceListLength; break;
+      case "15m": return 6;
+      case "1h": return 21;
+      case "4h": return 121;
+      case "Day": return 521;
+      case "Week": return 3361;
+      case "All": return priceListLength;
+      default: return priceListLength;
     }
   }
 }

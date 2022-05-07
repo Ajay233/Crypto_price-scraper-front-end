@@ -60,8 +60,8 @@ class NewTicker extends React.Component {
           <div className="formOption">
             <div className="selectHeading">Select which DEX to watch</div>
             <div>
-              <select onChange={(e) => this.setUrl(e)}>
-                <option selected disabled>Select DEX</option>
+              <select defaultValue={""} onChange={(e) => this.setUrl(e)}>
+                <option value={""} disabled>Select DEX</option>
                 <option value="https://app.minswap.org/">Minswap</option>
                 <option value="https://exchange.sundaeswap.finance/#/">Sundaeswap</option>
                 <option disabled>Maladex - coming soon</option>
@@ -73,8 +73,8 @@ class NewTicker extends React.Component {
           <div className="formOption">
             <div className="selectHeading">Swap pair to watch e.g. ADA/MIN</div>
             <div>
-              <select onChange={(e) => this.setSwapCurrency(e)}>
-                <option selected disabled>Select swap currency pairing</option>
+              <select defaultValue={""} onChange={(e) => this.setSwapCurrency(e)}>
+                <option value={""} disabled>Select swap currency pairing</option>
                 <option value="ADA - MIN">ADA - MIN</option>
                 <option value="ADA - MINt">ADA - MINt</option>
                 <option value="ADA - MELD">ADA - MELD</option>
@@ -92,8 +92,8 @@ class NewTicker extends React.Component {
           <div className="formOption">
             <div className="selectHeading">Price currency to be saved</div>
             <div>
-              <select onChange={(e) => this.setPriceCurrency(e)}>
-                <option selected disabled>Select price currency</option>
+              <select defaultValue={""} onChange={(e) => this.setPriceCurrency(e)}>
+                <option value={""} disabled>Select price currency</option>
                 <option value="MIN">MIN</option>
                 <option value="MINt">MINt</option>
                 <option value="MELD">MELD</option>
@@ -111,8 +111,8 @@ class NewTicker extends React.Component {
           <div className="formOption">
             <div className="selectHeading">Frequency - how often the ticker will fetch the price e.g. every 3 minutes</div>
             <div>
-              <select onChange={(e) => this.setfrequency(e)}>
-                <option selected disabled>Select frequency in minutes</option>
+              <select defaultValue={""} onChange={(e) => this.setfrequency(e)}>
+                <option value={""} disabled>Select frequency in minutes</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

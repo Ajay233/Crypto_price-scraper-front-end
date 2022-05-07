@@ -56,7 +56,7 @@ class Home extends React.Component {
   }
 
   render(){
-    const { prices, dex, currency } = this.props.homeState
+    const { prices, currency } = this.props.homeState
     return(
       <div>
         <img id="appTitle" src={require("../static/DexHeader.png")} alt="Cardano Dex Watcher"></img>

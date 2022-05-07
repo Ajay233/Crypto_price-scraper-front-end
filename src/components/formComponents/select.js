@@ -23,8 +23,12 @@ const Select = (props) => {
   }
 
   return(
-    <select onChange={(e) => props.onChangeFunc(e)} className={props.type === 'inline' ? 'select-inline' : ''}>
-      <option selected disabled>{props.defaultText}</option>
+    <select
+      onChange={(e) => props.onChangeFunc(e)}
+      className={props.type === 'inline' ? 'select-inline' : ''}
+      defaultValue={""}
+    >
+      <option value={""} disabled>{props.defaultText}</option>
       {mapOptions()}
     </select>
   );
