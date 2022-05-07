@@ -1,6 +1,6 @@
 .priceSummary {
-  width: 30%;
-  margin: 30px 35% 0 35%;
+  width: 375px;
+  margin: 30px auto 0 auto;
 }
 
 .pricePerCurrency {

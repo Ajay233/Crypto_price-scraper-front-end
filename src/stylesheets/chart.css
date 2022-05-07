@@ -14,8 +14,8 @@
 }
 
 .chartSelect {
-  width: 40%;
-  margin: 20px 30%;
+  width: 400px;
+  margin: 20px auto;
 }
 
 canvas {
