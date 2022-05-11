@@ -6,12 +6,12 @@ const PriceDisplay = (props) => {
   const renderPrice = () => {
     if(props.currency !== null && props.prices.length > 0) {
       return(
-        <div>
+        <React.Fragment>
           <span className="pricePerCurrency">
             {`1 ${props.currency} = ${props.prices[props.prices.length - 1].price} ADA`}
           </span>
           {renderIncreaseOrDecrease()}
-        </div>
+        </React.Fragment>
       )
     }
   }
