@@ -1,15 +1,18 @@
 export const dexList = {
   Minswap: {
     url: "https://app.minswap.org/",
-    logo: ""
+    logo: "",
+    formatPoolPair: (token) => `${token} - ADA`
   },
   SundaeSwap: {
     url: "https://exchange.sundaeswap.finance/#/",
-    logo: ""
+    logo: "",
+    formatPoolPair: (token) => `${token}/ADA`
   },
   Wingriders: {
     url: "https://app.wingriders.com/pools",
-    logo: ""
+    logo: "",
+    formatPoolPair: (token) => `ADA / ${token}`
   },
   Maladex: {
     url: "Coming soon",

@@ -22,6 +22,7 @@ class Tickers extends React.Component {
         <div className="tickerPriceCurrency tableHeading">Price Currency</div>
         <div className="tickerFrequency tableHeading">Ticker Frequency</div>
         <div className="tickerCreated tableHeading">Created</div>
+        <span className="tickerOptions"></span>
       </div>
     );
   }

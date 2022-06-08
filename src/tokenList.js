@@ -1,0 +1,19 @@
+export const tokens = [
+  "MIN",
+  "SUNDAE",
+  "MELD",
+  "DANA",
+  "WMT",
+  "LQ",
+  "VYFI",
+  "PAVIA",
+  "COPI",
+  "AADA",
+  "AGIX",
+  "NTX",
+  "CLAP",
+  "MILK",
+  "DRIP",
+  "CLAP",
+  "LQ"
+]

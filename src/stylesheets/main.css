@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: arial;
-  width: fit-content;
+  /* width: fit-content; */
   padding: 0 0 20px 0;
 }
 
@@ -40,12 +40,16 @@ html {
   padding: 10px 0;
 }
 
-.tickerDexUrl, .tickerCreated {
-  width: 20%;
+.tickerDexUrl {
+  width: 35%;
+}
+
+.tickerCreated {
+  width: 25%;
 }
 
 .tickerSwapCurrency, .tickerPriceCurrency {
-  width: 15%;
+  width: 20%;
   text-align: center;
 }
 

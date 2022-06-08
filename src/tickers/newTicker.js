@@ -64,8 +64,8 @@ class NewTicker extends React.Component {
                 <option value={""} disabled>Select DEX</option>
                 <option value="https://app.minswap.org/">Minswap</option>
                 <option value="https://exchange.sundaeswap.finance/#/">Sundaeswap</option>
+                <option value="https://app.wingriders.com/pools">Wingriders</option>
                 <option disabled>Maladex - coming soon</option>
-                <option disabled>Wingriders - coming soon</option>
                 <option disabled>AADANA - coming soon</option>
               </select>
             </div>
@@ -86,7 +86,16 @@ class NewTicker extends React.Component {
                 <option value="ADA - MILK">ADA - MILK</option>
                 <option value="ADA - cNETA">ADA - cNETA</option>
                 <option value="ADA - PAVIA">ADA - PAVIA</option>
+                <option disabled>-----------------------</option>
+                <option value="SUNDAE/ADA">SUNDAE/ADA</option>
+                <option value="COPI/ADA">COPI/ADA</option>
+                <option value="MIN/ADA">MIN/ADA</option>
+                <option disabled>-----------------------</option>
+                <option value="ADA / COPI">ADA / COPI</option>
+                <option value="ADA / MIN">ADA / MIN</option>
+                <option value="ADA / SUNDAE">ADA / SUNDAE</option>
               </select>
+
             </div>
           </div>
           <div className="formOption">
@@ -105,6 +114,7 @@ class NewTicker extends React.Component {
                 <option value="MILK">MILK</option>
                 <option value="cNETA">cNETA</option>
                 <option value="PAVIA">PAVIA</option>
+                <option value="COPI">COPI</option>
               </select>
             </div>
           </div>

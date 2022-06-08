@@ -8,10 +8,16 @@ const Select = (props) => {
 
   const mapObject = () => {
     let options = []
-    for (const [key, value] of Object.entries(props.optionList)){
-      // Temporary measure to stop anyone trying to select anything other than minswap
-      let comingSoon = value.url !== "https://app.minswap.org/"
-      options.push(<option key={key} disabled={comingSoon} value={key}>{key}{comingSoon ? `  ***TBC***` : null}</option>)
+    if(Array.isArray(props.optionList)){
+      options = props.optionList.map((opt, i) => {
+        return <option key={i} value={opt}>{opt}</option>
+      })
+    } else {
+      for (const [key, value] of Object.entries(props.optionList)){
+        // Temporary measure to stop anyone trying to select anything other than minswap
+        let comingSoon = value.url === "Coming soon" ? true : false;
+        options.push(<option key={key} disabled={comingSoon} value={key}>{key}{comingSoon ? `  ***TBC***` : null}</option>)
+      }
     }
     return options
   }
