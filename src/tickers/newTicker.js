@@ -75,6 +75,7 @@ class NewTicker extends React.Component {
             <div>
               <select defaultValue={""} onChange={(e) => this.setSwapCurrency(e)}>
                 <option value={""} disabled>Select swap currency pairing</option>
+                <option className="listHeadings" disabled>----Minswap currency pairs----</option>
                 <option value="ADA - MIN">ADA - MIN</option>
                 <option value="ADA - MINt">ADA - MINt</option>
                 <option value="ADA - MELD">ADA - MELD</option>
@@ -86,14 +87,29 @@ class NewTicker extends React.Component {
                 <option value="ADA - MILK">ADA - MILK</option>
                 <option value="ADA - cNETA">ADA - cNETA</option>
                 <option value="ADA - PAVIA">ADA - PAVIA</option>
-                <option disabled>-----------------------</option>
+                <option className="listHeadings" disabled>---SundaeSwap currency pairs---</option>
                 <option value="SUNDAE/ADA">SUNDAE/ADA</option>
                 <option value="COPI/ADA">COPI/ADA</option>
                 <option value="MIN/ADA">MIN/ADA</option>
-                <option disabled>-----------------------</option>
+                <option value="DANA/ADA">DANA/ADA</option>
+                <option value="WMT/ADA">WMT/ADA</option>
+                <option value="LQ/ADA">LQ/ADA</option>
+                <option value="VYFI/ADA">VYFI/ADA</option>
+                <option value="MILK/ADA">MILK/ADA</option>
+                <option value="cNETA/ADA">cNETA/ADA</option>
+                <option value="PAVIA/ADA">PAVIA/ADA</option>
+                <option className="listHeadings" disabled>---Wingriders currency pairs---</option>
+                <option value="ADA / WRT">ADA / WRT</option>
                 <option value="ADA / COPI">ADA / COPI</option>
                 <option value="ADA / MIN">ADA / MIN</option>
                 <option value="ADA / SUNDAE">ADA / SUNDAE</option>
+                <option value="ADA / DANA">ADA / DANA</option>
+                <option value="ADA / WMT">ADA / WMT</option>
+                <option value="ADA / LQ">ADA / LQ</option>
+                <option value="ADA / VYFI">ADA / VYFI</option>
+                <option value="ADA / MILK">ADA / MILK</option>
+                <option value="ADA / cNETA">ADA / cNETA</option>
+                <option value="ADA / PAVIA">ADA / PAVIA</option>
               </select>
 
             </div>
@@ -115,6 +131,7 @@ class NewTicker extends React.Component {
                 <option value="cNETA">cNETA</option>
                 <option value="PAVIA">PAVIA</option>
                 <option value="COPI">COPI</option>
+                <option value="WRT">WRT</option>
               </select>
             </div>
           </div>
