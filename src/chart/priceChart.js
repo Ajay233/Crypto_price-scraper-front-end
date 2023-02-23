@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -25,11 +25,13 @@ ChartJS.register(
 
 const PriceChart = (props) => {
 
+  const [chartRange, setChartRange] = useState('1h')
+
   const regex = /(T)|(:[0-9]{2}\.000Z)/g
   const labels = props.priceData.map(entry => entry.created.replace(regex, '  ').trim())
   const prices = props.priceData.map(entry => parseFloat(entry.price))
   const priceMovementColour = chartUtil.setLineColor(prices[prices.length - 1], prices[prices.length - 2])
-  const range = chartUtil.setMinPriceRange(props.range, prices.length)
+  const range = chartUtil.setMinPriceRange(chartRange, prices.length)
 
   const options = {
     responsive: true,
@@ -85,7 +87,7 @@ const PriceChart = (props) => {
   return(
     <div className="chartContainer">
     <div className="chartArea">
-      <RangeSelect range={props.range} setRange={props.setRange} />
+      <RangeSelect range={chartRange} setRange={setChartRange} />
       <Line data={data} options={options}/>
     </div>
     </div>
